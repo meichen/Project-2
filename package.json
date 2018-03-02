@@ -1,0 +1,27 @@
+{
+  "name": "project-2",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Mei Chen",
+  "license": "ISC",
+  "config": {
+    "prettier": "**/*.{js,json,css,jsx,md,mjs}"
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "format": "cross-env prettier --write \"$npm_package_config_prettier\""
+  },
+  "lint-staged": {
+    "**/*.{js,json,css,jsx,mjs}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "cross-env": "5.1.3",
+    "husky": "0.14.3",
+    "lint-staged": "6.1.0",
+    "prettier": "1.10.2"
+  }
+}
