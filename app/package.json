@@ -5,17 +5,27 @@
   "main": "index.js",
   "author": "Mei Chen",
   "license": "ISC",
+  "config": {
+    "css_vendor_src": "./node_modules/normalize.css/normalize.css ./node_modules/flexboxgrid/dist/flexboxgrid.min.css",
+    "css_vendor_dist": "./static/css/vendor.min.css"
+  },
   "scripts": {
+    "postinstall": "npm run build",
+    "build": "npm run build:css",
+    "build:css": "npm run build:css:vendor",
+    "build:css:vendor": "cross-env cat $npm_package_config_css_vendor_src > $npm_package_config_css_vendor_dist",
     "start": "cross-env NODE_ENV=production node .",
     "dev": "cross-env NODE_ENV=development nodemon .",
-	"test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "bluebird": "^3.5.1",
     "body-parser": "~1.0.0",
     "express": "^4.0.0",
+    "flexboxgrid": "^6.3.1",
     "hbs": "^4.0.0",
-    "mongoose": "^5.0.0-rc0"
+    "mongoose": "^5.0.0-rc0",
+    "normalize.css": "^8.0.0"
   },
   "devDependencies": {
     "cross-env": "^5.1.3",

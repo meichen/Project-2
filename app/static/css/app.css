@@ -1,0 +1,11 @@
+/* BUTTONS */
+a {
+	text-decoration: none;
+}
+
+.spotify-embed {
+	height: auto;
+	max-height: 80px;
+	width: 100%;
+	max-width: 100%;
+}
