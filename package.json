@@ -8,7 +8,7 @@
     "prettier": "**/*.{js,json,css,jsx,md,mjs}"
   },
   "scripts": {
-    "start": "node app/index.js",
+    "start": "node index.js",
     "precommit": "lint-staged",
     "format": "cross-env prettier --write \"$npm_package_config_prettier\""
   },
