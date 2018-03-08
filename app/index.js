@@ -10,7 +10,10 @@ app.use(express.static(__dirname + '/static'));
 app.set('view engine', 'hbs');
 app.set('port', process.env.PORT || 3000);
 
-app.get('/', (req, res) => res.render('index'));
+// TODO: Home page is pretty blank right now. Just redirecting ftm.
+// app.get('/', (req, res) => res.render('index'));
+app.get('/', (req, res) => res.redirect('/playlists'));
+
 app.use('/playlists', PlaylistsController);
 app.use('/users', UsersController);
 

@@ -1,5 +1,5 @@
 <h1>
-	{{playlist.title}} ({{playlist.songs.length}})
+	{{playlist.title}} ({{playlist.songs.length}}) &ndash;
 	<a href="/playlists/{{playlist._id}}/edit">
 		<i class="fa fa-edit"></i>
 	</a>
@@ -17,7 +17,7 @@
 			</button>
 
 			<div class="flex-grow">
-				<input type="text" name="uri" placeholder="Uri" required="required" />
+				<input type="text" name="uri" placeholder="spotify:track:uri" required="required" />
 				<input type="text" name="title" placeholder="Title (optional)" />
 			</div>
 		</div>

@@ -3,10 +3,16 @@
 }
 
 html {
+	background-color: #c9c9ff;
 	box-sizing: border-box;
+	color: #ffffff;
 	font-size: 16px;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
 		Verdana, sans-serif;
+}
+
+a {
+	color: #ffffff;
 }
 
 h1,
@@ -22,9 +28,17 @@ p {
 	line-height: 1.5;
 }
 
+hr {
+	border: 0;
+	border-top: 2px solid #ffffff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .wrapper {
 	max-width: 1200px;
 	margin: 0 auto;
+	width: 100%;
 }
 
 .padded {
@@ -45,5 +59,6 @@ img {
 }
 
 .align-items-center {
+	display: flex;
 	align-items: center;
 }
