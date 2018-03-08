@@ -3,10 +3,11 @@ const bodyParser = require('body-parser');
 const pkg = require('./package.json');
 const PlaylistsController = require('./controllers/playlists');
 const UsersController = require('./controllers/users');
+const path = require('path');
 
 const app = express();
 app.use(bodyParser());
-app.use(express.static(__dirname + '/static'));
+app.use(express.static(path.join(__dirname, 'static')));
 app.set('view engine', 'hbs');
 app.set('port', process.env.PORT || 3000);
 
