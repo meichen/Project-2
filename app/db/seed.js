@@ -5,7 +5,7 @@ const User = require('../models/User');
 Playlist.remove({}).then(() => {
 	Promise.all([
 		Playlist.create({
-			title: '?',
+			title: '',
 			description: ''
 		}),
 		Playlist.create({

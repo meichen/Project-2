@@ -1,1 +1,24 @@
-Edit!
+<h1>
+	{{playlist.title}} &ndash; Edit
+</h1>
+
+<hr>
+
+<form action="/playlists/{{playlist._id}}" method="post">
+	<div class="row">
+		<div class="field-wrapper col-xs-12">
+			<input type="text" name="title" placeholder="Title" value="{{playlist.title}}" />
+		</div>
+
+		<div class="field-wrapper col-xs-12">
+			<textarea name="description" placeholder="Description">{{playlist.description}}</textarea>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="btn-wrapper text-right">
+		<a href="/playlists/{{playlist._id}}/delete" class="btn">Delete</a>
+		<button type="submit">Save</button>
+	</div>
+</form>

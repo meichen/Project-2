@@ -1,1 +1,21 @@
-Create!
+<h1>Create a Playlist</h1>
+
+<hr>
+
+<form action="/playlists/create" method="post">
+	<div class="row">
+		<div class="field-wrapper col-xs-12">
+			<input type="text" name="title" placeholder="Title" />
+		</div>
+
+		<div class="field-wrapper col-xs-12">
+			<textarea name="description" placeholder="Description"></textarea>
+		</div>
+	</div>
+
+	<br>
+
+	<div class="btn-wrapper text-right">
+		<button type="submit">Create</button>
+	</div>
+</form>

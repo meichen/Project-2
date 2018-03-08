@@ -5,6 +5,7 @@ module.exports = mongoose.model(
 	new mongoose.Schema({
 		title: String,
 		description: String,
+		// songs: [array of songs goes here],
 		createdAt: { type: Date, default: Date.now }
 	})
 );

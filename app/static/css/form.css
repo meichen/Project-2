@@ -1,0 +1,66 @@
+form {
+	display: block;
+	width: 100%;
+}
+
+textarea,
+input {
+	border: 1px solid black;
+	padding: 10px;
+	width: 100%;
+}
+
+textarea {
+	min-height: 100px;
+	max-height: 300px;
+}
+
+.field-wrapper {
+	padding: 0.5em;
+}
+
+.btn,
+button {
+	background-color: pink;
+	border: none;
+	border-radius: 5px;
+	color: white;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	padding: 10px;
+	text-align: center;
+	transition: 0.5s background-color ease;
+}
+
+button:hover {
+	background-color: palevioletred;
+}
+
+.btn-wrapper {
+	width: 100%;
+}
+
+.btn-wrapper .btn,
+.btn-wrapper button {
+	margin-left: 0;
+	width: 100%;
+}
+
+.btn-wrapper .btn + .btn-wrapper .btn,
+.btn-wrapper button + .btn-wrapper button {
+	margin-top: 10px;
+}
+
+@media (min-width: 480px) {
+	.btn-wrapper .btn + .btn-wrapper .btn,
+	.btn-wrapper button + .btn-wrapper button {
+		margin-left: 10px;
+		margin-top: 0;
+	}
+
+	.btn-wrapper .btn,
+	.btn-wrapper button {
+		width: auto;
+	}
+}

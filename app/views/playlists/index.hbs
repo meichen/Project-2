@@ -1,0 +1,26 @@
+<h1>Playlists ({{playlists.length}})</h1>
+
+<hr>
+
+<div class="row">
+	{{!-- CREATE --}}
+	<div class="tile-wrapper col-xs-12 col-sm-4 col-md-3">
+		<a href="/playlists/create" class="tile tile-new">
+			<i class="fa fa-plus"></i>
+		</a>
+	</div>
+
+	{{#if playlists}}
+		{{#each playlists}}
+			<div class="tile-wrapper col-xs-12 col-sm-4 col-md-3">
+				<a href="/playlists/{{_id}}" class="tile">
+					<div>
+						<strong>{{title}}</strong>
+					</div>
+					<hr>
+					<p>{{description}}</p>
+				</a>
+			</div>
+		{{/each}}
+	{{/if}}
+</div>

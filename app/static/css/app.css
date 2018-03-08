@@ -9,3 +9,27 @@ a {
 	width: 100%;
 	max-width: 100%;
 }
+
+.tile {
+	background: white;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+	color: black;
+	display: block;
+	padding: 10px;
+	height: 100%;
+	width: 100%;
+}
+
+.tile-new {
+	color: gray;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 48px;
+	font-weight: normal;
+}
+
+.tile-wrapper {
+	height: 200px;
+	padding: 0.5em;
+}
