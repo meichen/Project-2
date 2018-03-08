@@ -1,10 +1,14 @@
 const mongoose = require('../db/connection');
 
-module.exports = mongoose.model(
-	'Song',
-	new mongoose.Schema({
-		title: String,
-		url: String,
-		createdAt: { type: Date, default: Date.now }
-	})
-);
+const SongSchema = new mongoose.Schema({
+	title: String,
+	uri: String,
+	createdAt: { type: Date, default: Date.now }
+});
+
+const SongModel = mongoose.model('Song', SongSchema);
+
+module.exports = {
+	SongModel,
+	SongSchema
+};

@@ -15,52 +15,47 @@ textarea {
 	max-height: 300px;
 }
 
-.field-wrapper {
-	padding: 0.5em;
-}
-
-.btn,
-button {
-	background-color: pink;
+.btn {
 	border: none;
 	border-radius: 5px;
-	color: white;
 	cursor: pointer;
 	display: inline-block;
 	font-weight: bold;
 	padding: 10px;
 	text-align: center;
-	transition: 0.5s background-color ease;
+	transition: 0.5s background-color ease, 0.5s color ease;
 }
 
-button:hover {
+.btn-cta {
+	background-color: pink;
+	color: white;
+}
+
+.btn-cta:hover {
 	background-color: palevioletred;
+	color: white;
 }
 
 .btn-wrapper {
 	width: 100%;
 }
 
-.btn-wrapper .btn,
-.btn-wrapper button {
+.btn-wrapper .btn {
 	margin-left: 0;
 	width: 100%;
 }
 
-.btn-wrapper .btn + .btn-wrapper .btn,
-.btn-wrapper button + .btn-wrapper button {
+.btn-wrapper .btn + .btn-wrapper .btn {
 	margin-top: 10px;
 }
 
 @media (min-width: 480px) {
-	.btn-wrapper .btn + .btn-wrapper .btn,
-	.btn-wrapper button + .btn-wrapper button {
+	.btn-wrapper .btn + .btn-wrapper .btn {
 		margin-left: 10px;
 		margin-top: 0;
 	}
 
-	.btn-wrapper .btn,
-	.btn-wrapper button {
+	.btn-wrapper .btn {
 		width: auto;
 	}
 }

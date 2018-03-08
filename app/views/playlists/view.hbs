@@ -1,5 +1,5 @@
 <h1>
-	{{playlist.title}}
+	{{playlist.title}} ({{playlist.songs.length}})
 	<a href="/playlists/{{playlist._id}}/edit">
 		<i class="fa fa-edit"></i>
 	</a>
@@ -9,11 +9,31 @@
 
 <p>{{playlist.description}}</p>
 
-<div class="row">
-	<div class="col-xs-12 col-sm-6 col-lg-4">
-		<iframe src="https://open.spotify.com/embed?uri=spotify:track:0tgVpDi06FyKpA1z0VMD4v" class="spotify-embed" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-		<iframe src="https://open.spotify.com/embed?uri=spotify:track:2IQB5iBapo0Y37Yc0PtIZc" class="spotify-embed" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-		<iframe src="https://open.spotify.com/embed?uri=spotify:track:5VnDkUNyX6u5Sk0yZiP8XB" class="spotify-embed" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-		<iframe src="https://open.spotify.com/embed?uri=spotify:track:7BKLCZ1jbUBVqRi2FVlTVw" class="spotify-embed" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+<form action="/playlists/{{playlist._id}}/songs/create" method="POST">
+	<div class="col-padded row">
+		<div class="spotify-wrapper align-items-center">
+			<button type="submit" class="btn btn-spotify btn-spotify-create">
+				<i class="fa fa-plus"></i>
+			</button>
+
+			<div class="flex-grow">
+				<input type="text" name="uri" placeholder="Uri" required="required" />
+				<input type="text" name="title" placeholder="Title (optional)" />
+			</div>
+		</div>
 	</div>
-</div>
+</form>
+
+{{#with playlist as |playlist|}}
+	{{#each playlist.songs as |song|}}
+		<div class="col-padded row">
+			<div class="spotify-wrapper align-items-center">
+				<a href="/playlists/{{playlist._id}}/songs/{{song._id}}/delete" class="btn btn-spotify btn-spotify-delete">
+					<i class="fa fa-minus"></i>
+				</a>
+
+				<iframe src="https://open.spotify.com/embed?uri={{song.uri}}" class="spotify-embed flex-grow" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+			</div>
+		</div>
+	{{/each}}
+{{/with}}

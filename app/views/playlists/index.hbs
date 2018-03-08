@@ -10,17 +10,15 @@
 		</a>
 	</div>
 
-	{{#if playlists}}
-		{{#each playlists}}
-			<div class="tile-wrapper col-xs-12 col-sm-4 col-md-3">
-				<a href="/playlists/{{_id}}" class="tile">
-					<div>
-						<strong>{{title}}</strong>
-					</div>
-					<hr>
-					<p>{{description}}</p>
-				</a>
-			</div>
-		{{/each}}
-	{{/if}}
+	{{#each playlists as |playlist|}}
+		<div class="tile-wrapper col-xs-12 col-sm-4 col-md-3">
+			<a href="/playlists/{{playlist._id}}" class="tile">
+				<div>
+					<strong>{{playlist.title}} ({{playlist.songs.length}})</strong>
+				</div>
+				<hr>
+				<p>{{playlist.description}}</p>
+			</a>
+		</div>
+	{{/each}}
 </div>
