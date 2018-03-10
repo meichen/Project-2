@@ -1,14 +1,12 @@
 const express = require('express');
-const Bluebird = require('bluebird');
 const { PlaylistModel } = require('../models/Playlist');
 
 const router = express.Router();
-const VIEW_DIR = 'playlists';
 
 // View All Playlists
 router.get('/', (req, res) =>
 	PlaylistModel.find().then(playlists =>
-		res.render(`${VIEW_DIR}`, {
+		res.render('playlists', {
 			playlists
 		})
 	)
@@ -17,7 +15,7 @@ router.get('/', (req, res) =>
 // New Playlist
 router
 	.route('/create')
-	.get((req, res) => res.render(`${VIEW_DIR}/create`))
+	.get((req, res) => res.render('playlists/create'))
 	.post(({ body: { title, description } }, res) =>
 		PlaylistModel.create({
 			title,
@@ -30,7 +28,7 @@ router
 	.route('/:id')
 	.get(({ params: { id } }, res) =>
 		PlaylistModel.findById(id).then(playlist =>
-			res.render(`${VIEW_DIR}/view`, {
+			res.render('playlists/view', {
 				playlist
 			})
 		)
@@ -45,7 +43,7 @@ router
 // Edit a Playlist
 router.get('/:id/edit', ({ params: { id } }, res) =>
 	PlaylistModel.findById(id).then(playlist =>
-		res.render(`${VIEW_DIR}/edit`, {
+		res.render('playlists/edit', {
 			playlist
 		})
 	)
@@ -53,7 +51,7 @@ router.get('/:id/edit', ({ params: { id } }, res) =>
 
 // Delete a Playlist
 router.get('/:id/delete', ({ params: { id } }, res) =>
-	PlaylistModel.findByIdAndRemove(id).then(playlist => res.redirect(`/playlists`))
+	PlaylistModel.findByIdAndRemove(id).then(playlist => res.redirect('/playlists'))
 );
 
 // Create a Song

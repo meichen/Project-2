@@ -1,4 +1,204 @@
-/* BUTTONS */
+/* UTILITY */
+.clearfix::after {
+	content: '';
+	clear: both;
+	display: table;
+	width: 100%;
+}
+
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+.text-right {
+	text-align: right;
+}
+
+/* LAYOUT */
+* {
+	box-sizing: inherit;
+}
+
+html {
+	background-color: #c9c9ff;
+	box-sizing: border-box;
+	color: #ffffff;
+	font-size: 16px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+		Verdana, sans-serif;
+}
+
+a {
+	color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+hr {
+	border: 0;
+	border-top: 2px solid #ffffff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.padded {
+	padding: 0 20px;
+}
+
+.col-padded {
+	padding: 0.5em;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.flex-grow {
+	flex-grow: 1;
+}
+
+.align-items-center {
+	display: flex;
+	align-items: center;
+}
+
+/* HEADER */
+body {
+	margin-top: 50px;
+	padding-top: 20px;
+}
+
+header {
+	align-items: center;
+	display: flex;
+	background-color: #ffffff;
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+	font-size: 20px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+
+header a {
+	color: #c9c9ff;
+}
+
+nav {
+	flex-grow: 1;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav li {
+	float: right;
+}
+
+nav li + li {
+	margin-right: 20px;
+}
+
+.site-title {
+	font-weight: bold;
+	font-size: 28px;
+}
+
+/* FORM */
+form {
+	display: block;
+	width: 100%;
+}
+
+textarea,
+input {
+	background-color: #ffffff;
+	border: 2px solid #c9c9ff;
+	color: #c9c9ff;
+	outline: none;
+	padding: 10px;
+	width: 100%;
+}
+
+textarea::placeholder,
+input::placeholder {
+	color: #c9c9ff;
+}
+
+textarea {
+	min-height: 100px;
+	max-height: 300px;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+.btn {
+	border: none;
+	border-radius: 40px;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: bold;
+	padding: 10px 40px;
+	text-align: center;
+	transition: 0.5s background-color ease, 0.5s color ease;
+}
+
+.btn-cta {
+	background-color: #f1cbff;
+	color: white;
+}
+
+.btn-wrapper {
+	width: 100%;
+}
+
+.btn-wrapper .btn {
+	margin-left: 0;
+	width: 100%;
+}
+
+.btn-wrapper .btn + .btn {
+	margin-top: 10px;
+}
+
+@media (min-width: 480px) {
+	.btn-wrapper .btn + .btn {
+		margin-left: 10px;
+		margin-top: 0;
+	}
+
+	.btn-wrapper .btn {
+		width: auto;
+	}
+}
+
+/* APP */
 a {
 	text-decoration: none;
 }

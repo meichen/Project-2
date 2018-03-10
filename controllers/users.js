@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const VIEW_DIR = 'users';
-
-router.get('/view', (req, res) => res.render(`${VIEW_DIR}/view`));
-router.get('/edit', (req, res) => res.render(`${VIEW_DIR}/edit`));
-router.get('/create', (req, res) => res.render(`${VIEW_DIR}/create`));
+router.get('/view', (req, res) => res.render('users/view'));
+router.get('/edit', (req, res) => res.render('users/edit'));
+router.get('/create', (req, res) => res.render('users/create'));
 
 module.exports = router;
